@@ -1,0 +1,82 @@
+.personal-layout {
+    display: flex;
+    width: 984px;
+    min-height: 720px;
+    flex-direction: column;
+    background-color: #ffffff;
+    .list-tab {
+      height: 160px;
+      display: flex;
+      background: #ffffff;
+      border-radius: 4px;
+      .list-tab-item {
+        flex: auto;
+        position: relative;
+        cursor: pointer;
+        &.active {
+          background-color: #FDFDFD;
+        }
+        &.active::before {
+          content: "";
+          width: 100%;
+          height: 3px;
+          background-color: #0067ED;
+          position: absolute;
+          top: 0px;
+          left: 0px;
+        }
+        padding: 18px 30px 30px;
+        .tab-item-title {
+          font-size: 16px;
+          font-weight: normal;
+          color: #222222;
+        }
+        .tab-item-content {
+          display: flex;
+          justify-content: center;
+          .count {
+            font-size: 35px;
+            padding-top: 17px;
+            text-align: left;
+            color: #222222;
+            p{
+              color: #999999;
+            }
+            .iconfont {
+              font-size: 12px;
+              color: #ED2221;
+              margin-left: 3px;
+            }
+            p {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+    .panel-component {
+      border-radius: 4px;
+      border: none;
+      .panel-component-header {
+        border-color: #EAEDF1;
+      }
+    }
+    .list-content{
+      .el-table {
+        .el-table__header-wrapper th {
+          border: none !important;
+        }
+        td, th {
+          border-bottom: 1px solid #EAEDF1;
+        }
+        &.el-table--striped {
+          .el-table__body tr.el-table__row--striped td {
+            background-color: #FDFDFD !important;
+          }
+        }
+      }
+      .el-table::before {
+        display: none;
+      }
+    }
+  }

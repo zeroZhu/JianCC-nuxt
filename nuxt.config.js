@@ -23,18 +23,28 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: ['element-ui/lib/theme-chalk/index.css'],
+  css: [
+    'element-ui/lib/theme-chalk/index.css',
+    'assets/main.css',
+    {
+      src: 'assets/less/common.less',
+      lang: 'less'
+    }
+  ],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/element-ui'],
+  plugins: [
+    { src: '@/plugins/element-ui', ssr: true },
+    { src: '@/plugins/components', ssr: true },
+    { src: '@/plugins/axios', ssr: true }
+  ],
   /*
    ** Nuxt.js modules
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/axios'
   ],
   /*
    ** Axios module configuration
@@ -45,10 +55,6 @@ module.exports = {
    ** Build configuration
    */
   build: {
-    transpile: [/^element-ui/],
-    /*
-     ** You can extend webpack config here
-     */
-    extend(config, ctx) {}
+    transpile: [/^element-ui/]
   }
 }

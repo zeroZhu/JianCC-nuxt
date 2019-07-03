@@ -1,6 +1,8 @@
 <template>
-  <div>
+  <div id="default-layout">
+    <header-component/>
     <nuxt />
+    <footer-component/>
   </div>
 </template>
 
@@ -51,5 +53,10 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+
+#default-layout {
+  padding-top: 100px;
+  background: #F2F3F5;
 }
 </style>
