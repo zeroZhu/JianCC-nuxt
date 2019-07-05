@@ -9,7 +9,7 @@
           @mouseenter="hover=item.id"
           @mouseleave="hover=0"
         >
-          {{item.label}}
+          <a :href="`#${item.id}`">{{item.label}}</a>
         </li>
       </ul>
       <ul class="panel-list" v-if="listExit" v-show="listVisible">
@@ -18,9 +18,11 @@
           @mouseleave="hover=0"
         >
           <ul>
-            <li v-for="v in item.children" :key="v.id">
-              <span>{{v.label}}</span>
-              <span style="color: #0067ED">{{v.count}}</span>
+            <li v-for="v in item.children" :key="v.id" @click="scrollTo(v.id)">
+              <a >
+                <span>{{v.label}}</span>
+                <span style="color: #0067ED">{{v.count}}</span>
+              </a>
             </li>
           </ul>
         </li>
@@ -54,6 +56,10 @@ export default {
       this.listExit = this.titleConfig.some(v=> {
         return v.children&&v.children.length>0;
       })
+    },
+    scrollTo(v){
+      let y = document.querySelector(`#${v}`).getBoundingClientRect().top-250;
+      window.scrollTo(0,y);
     }
   }
 }

@@ -4,7 +4,7 @@
  * @Last Modified by: Zero
  * @Last Modified time: 2019-04-22 15:35:23
  */
-#app {
+#__layout {
   // Pagination
   .el-pagination {
     .btn-prev, .btn-next {
@@ -98,7 +98,7 @@
         color: #222222;
       }
       th {
-        padding: 15px 0;
+        padding: 10px 0;
         background-color: #EDF7FF;
         border-color: #D8E8F4;
       }
@@ -106,7 +106,7 @@
     .el-table__body-wrapper {
       td {
         font-size: 14px;
-        padding: 15px 0;
+        padding: 9px 0;
       }
     }
     &.el-table--border {
@@ -121,7 +121,7 @@
       }
     }
     .cell {
-      line-height: 22px;
+      line-height: 23px;
     }
   }
   .el-table--border::after, .el-table--group::after, .el-table::before {
@@ -174,3 +174,20 @@
   .el-dropdown-menu {
     overflow: unset!important;
   }
+
+// dialog
+.el-dialog {
+  &.dialog-detail {
+    width: 740px;
+    .el-dialog__header {
+      border-bottom: 1px solid #EAEDF1;
+      .el-dialog__title {
+        font-size: 16px;
+        color: #333333;
+      }
+    }
+    .el-dialog__body {
+      padding: 20px 20px 30px;
+    }
+  }
+}

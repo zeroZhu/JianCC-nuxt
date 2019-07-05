@@ -2,7 +2,7 @@
  * @Author: Zero 
  * @Date: 2019-02-28 15:40:32 
  * @Last Modified by: Zero
- * @Last Modified time: 2019-07-02 14:12:59
+ * @Last Modified time: 2019-07-04 17:38:03
  */
 
 @import "//at.alicdn.com/t/font_1065666_6q2du8h7fvs.css";
@@ -20,6 +20,13 @@
   background: #0067ED;
 }
 
+.link {
+  color: #0067ED;
+  cursor: pointer;
+}
+.link:hover{
+  color: #0067ED;
+}
 // margin
 .ml10 {
   margin-left: 10px;
@@ -512,6 +519,11 @@
     margin-bottom: 60px;
     .detail-content {
       padding: 0 20px 30px;
+      // 假锚点
+      .pointer {
+        position: relative;
+        top: -400px;
+      }
       .panel-tab-item {
         h3 {
           padding: 30px 0 15px;
@@ -597,6 +609,48 @@
         line-height: 24px;
         padding: 10px 20px 10px;
       }
+    }
+  }
+}
+
+// 详情二分表格
+.form-table-component {
+  display: flex;
+  font-size: 14px;
+  line-height: 20px;
+  color: #222222;
+  ul {
+    width: 100%;
+    border: 1px solid #d8e8f4;
+    li {
+      display: flex;
+      border-bottom: 1px solid #d8e8f4;
+      .form-table-item + .form-table-item {
+        border-left: 1px solid #d8e8f4;
+      }
+      .form-table-item {
+        display: flex;
+        flex: 1;
+        span {
+          padding: 16px 10px;
+          display: flex;
+          align-items: center;
+          &.label {
+            width: 120px;
+            border-right: 1px solid #d8e8f4;
+            background-color: #edf7ff;
+            text-align: center;
+            justify-content: center;
+          }
+          &.value {
+            flex: 1;
+            text-align: left;
+          }
+        }
+      }
+    }
+    li:last-child {
+      border-bottom: none;
     }
   }
 }
